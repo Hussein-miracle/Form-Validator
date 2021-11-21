@@ -53,9 +53,13 @@ const checkRequiredInput = function(inputArr){
 
 //check length
 function checkLength(input ,min , max){
-  if(input.value.length < min){
+  if(input === "email"){
+    return;
+  }else if(input.value.trim() === "") {
+    return `<small class="error"> ${getFieldName(input)}  field is required! </small>`;
+  }else  if(input.value.length < min && input.value.trim() !== ""){
     showError(input , `<small class="error">${getFieldName(input)} must be at least ${min} character </small>`)
-  }else if (input.value.length > max){
+  }else if (input.value.length > max  && input.value.trim() !== ""){
     showError(input , `<small class="error">${getFieldName(input)} must be at most or lower than ${max} character</small>`)
   }else{
     showSuccess(input)

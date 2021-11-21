@@ -93,7 +93,8 @@ h2{
 .form-control.error small{
   visibility: visible;
   display: block;
-  padding-right: 1rem;
+  /* padding: 1rem; */
+  margin: 1rem;
 }
 
 .form button{
